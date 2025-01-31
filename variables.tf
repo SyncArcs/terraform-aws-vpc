@@ -1,19 +1,19 @@
 #Description : Terraform label module variables.
 variable "name" {
   type        = string
-  default     = ""
+  default     = "app"
   description = "Name  (e.g. `app` or `cluster`)."
 }
 
 variable "environment" {
   type        = string
-  default     = ""
+  default     = "dev"
   description = "Environment (e.g. `prod`, `dev`, `staging`)."
 }
 
 variable "repository" {
   type        = string
-  default     = ""
+  default     = "https://github.com/SyncArcs/terraform-aws-vpc.git"
   description = "Terraform current module repo"
 }
 
@@ -25,8 +25,8 @@ variable "label_order" {
 
 variable "managedby" {
   type        = string
-  default     = ""
-    description = "ManagedBy, eg 'SyncArcs'"
+  default     = "SyncArcs"
+  description = "ManagedBy, eg 'SyncArcs'"
 }
 
 #Module      : VPC
@@ -45,8 +45,8 @@ variable "restrict_default_sg" {
 
 variable "cidr_block" {
   type        = string
-  default     = ""
-  description = "CIDR for the VPC."
+  description = "The CIDR block for the VPC."
+  default     = "10.0.0.0/16" # Provide a default value
 }
 
 variable "additional_cidr_block" {
